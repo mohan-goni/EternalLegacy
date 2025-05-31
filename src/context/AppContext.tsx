@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { useAuth } from '../hooks/useAuth';
 
 type Theme = 'dark' | 'light';
 
@@ -6,26 +7,21 @@ interface AppContextType {
   theme: Theme;
   toggleTheme: () => void;
   isAuthenticated: boolean;
-  login: () => void;
-  logout: () => void;
+  user: any;
+  loading: boolean;
+  signIn: (email: string, password: string) => Promise<any>;
+  signUp: (email: string, password: string, fullName: string) => Promise<any>;
+  signOut: () => Promise<void>;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>('dark');
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { user, loading, signIn, signUp, signOut } = useAuth();
 
   const toggleTheme = () => {
     setTheme(prevTheme => (prevTheme === 'dark' ? 'light' : 'dark'));
-  };
-
-  const login = () => {
-    setIsAuthenticated(true);
-  };
-
-  const logout = () => {
-    setIsAuthenticated(false);
   };
 
   return (
@@ -33,9 +29,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       value={{ 
         theme, 
         toggleTheme, 
-        isAuthenticated, 
-        login, 
-        logout 
+        isAuthenticated: !!user,
+        user,
+        loading,
+        signIn,
+        signUp,
+        signOut
       }}
     >
       {children}
