@@ -33,6 +33,10 @@ export default {
           900: '#0f172a',
           950: '#020617',
         },
+        'background-dark': '#020617',
+        'text-light': '#f1f5f9',
+        'text-muted': '#94a3b8',
+        'text-dark': '#0f172a'
       },
       fontFamily: {
         sans: ['Inter var', 'sans-serif'],
