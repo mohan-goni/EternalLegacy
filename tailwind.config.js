@@ -40,6 +40,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter var', 'sans-serif'],
+        heading: ['Nunito Sans', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fade-in 0.5s ease-out',
