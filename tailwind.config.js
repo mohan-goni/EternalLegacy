@@ -5,6 +5,10 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ['"Inter var"', 'sans-serif'],
+      heading: ['"Nunito Sans"', 'sans-serif'],
+    },
     extend: {
       colors: {
         primary: {
@@ -37,10 +41,6 @@ export default {
         'text-light': '#f1f5f9',
         'text-muted': '#94a3b8',
         'text-dark': '#0f172a'
-      },
-      fontFamily: {
-        sans: ['"Inter var"', 'sans-serif'],
-        heading: ['"Nunito Sans"', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fade-in 0.5s ease-out',
