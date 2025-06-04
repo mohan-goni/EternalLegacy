@@ -39,8 +39,8 @@ export default {
         'text-dark': '#0f172a'
       },
       fontFamily: {
-        sans: ['Inter var', 'sans-serif'],
-        heading: ['Nunito Sans', 'sans-serif'],
+        sans: ['"Inter var"', 'sans-serif'],
+        heading: ['"Nunito Sans"', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fade-in 0.5s ease-out',
